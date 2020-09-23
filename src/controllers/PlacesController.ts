@@ -3,6 +3,17 @@ import { Request, Response } from 'express'
 const repository = require('../repositories/placesRepository')
 
 export default class PlacesController {
+    async index(req: Request, res: Response) {
+        try {
+            let index = await repository.index()
+            return res.json(index)
+        } catch (e) {
+            return res.status(400).json({
+                error: 'Unexpected error while listing all places'
+            })
+        }
+    }
+    
     async create(req: Request, res: Response) {
         const { name, image_url, place, address, whatsapp, bio, uf, city, schedule } = req.body
 
