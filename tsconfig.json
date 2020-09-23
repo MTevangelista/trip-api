@@ -23,7 +23,7 @@
       "@database/*": ["./src/database/*"],
       "@models/*": ["./src/models/*"],
       "@repositories/*": ["./src/repositories/*"],
-      "@utils/*": ["./src/utils/*"]
+      "@utils/*": ["./src/utils/*"],
     }
   },
   "include": [
